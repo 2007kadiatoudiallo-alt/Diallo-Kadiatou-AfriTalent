@@ -3,10 +3,10 @@
 :root {
   --font-titre: "Playfair Display";
   --font-corps: "Montserrat";
-  --primary-color: #0f172a;
-  --accent-color: #d4af37;
-  --bg-light: #acc8a2;
-  --text-main: #334155;
+  --primary-color: black;
+  /* --accent-color: #d4af37; */
+  --bg-light: #f8f9fa;
+  --text-main: #2d3e1d;
 
   --spacing: 20px;
   --radius: 12px;
@@ -24,7 +24,6 @@ body {
   line-height: 1.6;
 }
 
-h1,
 h2,
 h3 {
   font-family: var(--font-titre);
@@ -32,15 +31,143 @@ h3 {
   font-weight: 700;
   margin-bottom: var(--spacing);
 }
+.navbar a {
+  color: black;
+}
 .navbar {
-  background-color: #0e1901 !important;
+  background-color: white;
   padding: 1;
   box-shadow: var(--shadow-soft);
   border-radius: 2;
+}
+.navbar-nav .nav-link:hover {
+  background-color: #406d38;
+  border-radius: 12px;
 }
 .btn {
   background-color: #0d1809;
 }
 .navbar-brand img {
   border-radius: 12px;
+}
+.hero {
+  background:
+    linear-gradient(rgba(41, 56, 24, 0.5), rgba(225, 231, 220, 0.5)),
+    url("https://i1-c.pinimg.com/1200x/aa/c4/77/aac477188ec2e32e4ff472f5e6f6731c.jpg")
+      no-repeat center center/cover;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(248, 250, 246);
+}
+
+/* pour placer les stats au milieu et totu  */
+.blo .p-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blo .p-3 strong {
+  display: block;
+  font-size: 2rem;
+  color: white;
+}
+
+.blo {
+  color: #ffffff;
+}
+.hero {
+  position: relative;
+  /* deplacer un element par rapport a position normal */
+}
+.hero-section h1 {
+  margin-bottom: 25px;
+}
+.blo {
+  position: absolute;
+  /* sert a placer l element sur un endroit precis */
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 20px 0; /* Espace interne  */
+  width: 100%;
+  /* l'element doit take toute la largeur dispo de son parents */
+}
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: #406d38;
+
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #1c2716;
+}
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+/* Effet au survol */
+.card:hover {
+  /* Soulève la carte de 10px */
+  transform: translateY(-10px);
+}
+/* la grille */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Découpe l'espace en 3 col égale */
+  gap: 20px; /* espace de 20px entre les cartes */
+}
+
+.bento-grid .card {
+  border-radius: 16px;
+}
+
+/* asymetire */
+.bento-grid .card:nth-child(1) {
+  grid-column: span 2; /* il select la carte avec le 1 et lui dit de prendre la largeur de 2 cases*/
+}
+
+.bento-grid .card:nth-child(4) {
+  grid-column: span 2; /* La carte 4 est large elle s'étale sur 2 colonnes */
+}
+
+/* 2. effert survol */
+.categ-grid .card:hover {
+  /*  Soulève la carte de 8 px vers le haut */
+  transform: translateY(-8px);
+
+  /* effet ombre */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+
+  /*  Change la bordure en vert  */
+  /* border-color: #198754; */
+  background-color: rgb(44, 77, 2);
+
+  /* change le curseur en une main */
+  cursor: pointer;
 }
