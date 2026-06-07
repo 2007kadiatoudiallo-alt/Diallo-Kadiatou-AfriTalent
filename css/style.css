@@ -35,7 +35,7 @@ h3 {
   color: black;
 }
 .navbar {
-  background-color: white;
+  background-color: rgb(19, 66, 25);
   padding: 1;
   box-shadow: var(--shadow-soft);
   border-radius: 2;
@@ -63,6 +63,10 @@ h3 {
   text-align: center;
   color: rgb(248, 250, 246);
 }
+/* .hero .container {
+  display: flex;
+  flex-direction: column;
+} */
 
 /* pour placer les stats au milieu et totu  */
 .blo .p-3 {
@@ -90,10 +94,10 @@ h3 {
 .blo {
   position: absolute;
   /* sert a placer l element sur un endroit precis */
-  bottom: 0;
+  bottom: -40px;
   left: 0;
   right: 0;
-
+  margin-top: 30px;
   padding: 20px 0; /* Espace interne  */
   width: 100%;
   /* l'element doit take toute la largeur dispo de son parents */
@@ -162,7 +166,7 @@ h3 {
   transform: translateY(-8px);
 
   /* effet ombre */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 
   /*  Change la bordure en vert  */
   /* border-color: #198754; */
@@ -170,4 +174,145 @@ h3 {
 
   /* change le curseur en une main */
   cursor: pointer;
+}
+
+/* Mobile ecran375px */
+@media (min-width: 375px) {
+  .hero h1 {
+    font-size: 1.8rem; /* Rend le titre du Hero plus adapté sur mobile */
+  }
+}
+
+/* sur desktop */
+
+/* Le sous-titre p remonte tout en haut et on bloque sa largeur */
+.hero p {
+  max-width: 650px; /* Aligne la largeur du texte sur celle du h1 */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 25px; /* Espace propre avant le h1 */
+}
+
+/*  h1 se place juste en dessous */
+.hero h1 {
+  order: 2;
+  margin-top: 0;
+  margin-bottom: 35px; /* Espace avant les boutons */
+}
+
+/*  Les boutons restent au milieu */
+.hero .d-flex {
+  order: 3;
+  margin-bottom: 50px;
+}
+
+/* Les statistiques blo se collent parfaitement tout en bas à l'horizontale */
+.blo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* sur tab */
+
+@media (min-width: 768px) {
+  /*  On donne  flexibilite a hero */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 110px; /* Évite que le haut ne touche la navbar */
+    padding-bottom: 140px; /* Laisse de l'espace pour le bloc absolu en bas */
+    position: relative;
+  }
+}
+/* les stats en bas et horzontale */
+.blo {
+  position: absolute; /* Revient se coller tout en bas du fond */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 0;
+}
+
+/* On force la ligne Bootstrap à tout garder sur la même ligne */
+.blo .row {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+}
+
+/* sur mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0 150px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .hero .container {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  /* Boutons en colonne */
+  .hero a.btn {
+    display: block;
+    width: 80%;
+    margin: 8px auto;
+  }
+
+  /*  annuler le position absolute */
+  .blo {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0;
+  }
+
+  .blo .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .blo .col {
+    width: 100%;
+  }
+
+  .blo strong {
+    font-size: 1.5rem;
+    display: block;
+  }
+  /* Bento grid en colonne unique */
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Annuler les cartes qui s'étalent sur 2 colonnes */
+  .bento-grid .card:nth-child(1),
+  .bento-grid .card:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  /* Cartes pleine largeur */
+  .bento-grid .card {
+    width: 100%;
+  }
 }
