@@ -35,13 +35,13 @@ h3 {
   color: black;
 }
 .navbar {
-  background-color: rgb(19, 66, 25);
+  background-color: #114c17;
   padding: 1;
   box-shadow: var(--shadow-soft);
   border-radius: 2;
 }
 .navbar-nav .nav-link:hover {
-  background-color: #406d38;
+  background-color: #114c17;
   border-radius: 12px;
 }
 .btn {
@@ -114,7 +114,7 @@ h3 {
 }
 
 .btn {
-  background-color: #406d38;
+  background-color: #114c17;
 
   color: white;
   padding: 12px 30px;
@@ -125,7 +125,7 @@ h3 {
 }
 
 .btn:hover {
-  background-color: #1c2716;
+  background-color: #114c17;
 }
 .card {
   transition:
@@ -170,7 +170,7 @@ h3 {
 
   /*  Change la bordure en vert  */
   /* border-color: #198754; */
-  background-color: rgb(44, 77, 2);
+  background-color: #114c17;
 
   /* change le curseur en une main */
   cursor: pointer;
@@ -317,6 +317,59 @@ h3 {
   }
 }
 
+/* about bento grid */
+
+/* 1. On configure la grille principale */
+.bento-grille {
+  display: grid;
+  /* On crée 3 colonnes de taille égale */
+  grid-template-columns: repeat(3, 1fr);
+  /* L'espace entre les blocs */
+  gap: 20px;
+}
+
+/* 2. Le style général de chaque boîte du Bento */
+.bento-item {
+  background-color: #114c17;
+  color: white;
+  padding: 30px;
+  border-radius: 15px; /* Les bords bien arrondis style Bento */
+  text-align: center;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style pour mettre les chiffres bien gros */
+.bento-item strong {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 3. On change la taille des blocs pour l'effet Bento */
+/* Le premier bloc prendra 2 colonnes de large */
+.item-1 {
+  grid-column: span 2;
+}
+
+/* Le deuxième bloc prendra 1 colonne de large  */
+.item-2 {
+  grid-column: span 1;
+}
+
+/* Le troisième bloc prendra 1 colonne de large sur la ligne 2 */
+.item-3 {
+  grid-column: span 1;
+}
+
+/* Le quatrième bloc prendra 2 colonnes de large sur la ligne 2 */
+.item-4 {
+  grid-column: span 2;
+}
+
 /* js */
 /* Dark Mode */
 body.dark-mode {
@@ -358,11 +411,45 @@ body.dark-mode h3 {
   transition:
     background-color 0.4s ease,
     box-shadow 0.4s ease;
-  background-color: transparent !important;
+  background-color: black !important;
 }
 
 /* État après scroll */
 .navbar.scrolled {
-  background-color: #0f4a0f !important;
+  background-color: #114c17 !important;
   box-shadow: 0 4px 20px rgba(27, 88, 14, 0.5);
+}
+
+/* fade in */
+/* État de départ : invisible et légèrement descendu */
+.fade-in-section {
+  opacity: 1;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+/* État final (géré par le JavaScript) : visible et à sa place d'origine */
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bento-item {
+  /* Garde ton design (couleur, padding, radius) et ajoute cette ligne pour la fluidité : */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Quand la souris passe sur une carte du Bento */
+.bento-item:hover {
+  transform: translateY(
+    -8px
+  ); /* Souleve de la carte vers le haut de 8 pixels */
+
+  background-color: #375a47; /* Change légèrement la couleur  */
 }

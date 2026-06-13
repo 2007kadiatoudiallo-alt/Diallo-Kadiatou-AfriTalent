@@ -1,65 +1,90 @@
-const toggleBtn = document.getElementById("theme-toggle");
+// dark mode
+const toggle = document.getElementById("theme-toggle");
+const body = document.body;
 
-// Appliquer le thème sauvegardé au chargement
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  document.body.classList.add(savedTheme);
-  toggleBtn.textContent = savedTheme === "dark-mode" ? "☀️" : "🌙";
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  toggle.textContent = "☀️";
 }
 
-// Au clic sur le bouton
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-
-  const isDark = document.body.classList.contains("dark-mode");
-  localStorage.setItem("theme", isDark ? "dark-mode" : "");
-  toggleBtn.textContent = isDark ? "☀️" : "🌙";
-});
-
-// bouton retour en haut
-
-const backToTopBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  // Fait apparaître le bouton après 300px de scroll
-  // d-none enleve le bootstarp qui cache le bouton
-  if (window.scrollY > 300) {
-    backToTopBtn.classList.remove("d-none");
+toggle.addEventListener("click", function () {
+  body.classList.toggle("light-mode");
+  if (body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light");
+    toggle.textContent = "☀️";
   } else {
-    backToTopBtn.classList.add("d-none");
+    localStorage.setItem("theme", "dark");
+    toggle.textContent = "🌙";
   }
 });
 
-// Remonter en haut au clic
-// scroll to permet de deplacer la page
-// top to on lui donne les coordonnes de dest tout en haut de la page
-// smooth 0 permet d aller en glissant au lieu de se teleporter
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth" /* Remontée fluide */,
-  });
-});
-// On sélectionne la navbar grâce à sa classe Bootstrap principale
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-  // Si on a défilé de plus de 50 pixels vers le bas
-  if (window.scrollY > 50) {
-    navbar.classList.add("navbar-scrolled");
-  } else {
-    // Si on remonte tout en haut, on retire les styles du scroll
-    navbar.classList.remove("navbar-scrolled");
-  }
-});
-
-// nav qui change au scroll
-
+// navbar au scroll
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 60) {
+  if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
+});
+
+// retour en hqaut
+const btnTop = document.getElementById("btn-top");
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    btnTop.style.display = "block";
+  } else {
+    btnTop.style.display = "none";
+  }
+});
+
+// commit   7 le cpt et le fade in
+document.addEventListener("DOMContentLoaded", function () {
+  // -- COMPTEURS --
+  var compteurs = document.querySelectorAll(".compteur");
+
+  compteurs.forEach(function (compteur) {
+    var dejaLance = false;
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting && !dejaLance) {
+          dejaLance = true;
+          var cible = parseInt(compteur.getAttribute("data-cible"));
+          var actuel = 0;
+          var increment = Math.ceil(cible / 100);
+
+          var timer = setInterval(function () {
+            actuel += increment;
+            if (actuel >= cible) {
+              actuel = cible;
+              clearInterval(timer);
+            }
+            compteur.textContent = actuel;
+          }, 20);
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(compteur);
+  });
+
+  // fade in
+  var sections = document.querySelectorAll(".fade-in-section");
+
+  var fadeObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  sections.forEach(function (s) {
+    fadeObserver.observe(s);
+  });
 });
