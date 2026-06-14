@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AfriTalent — Contact</title>
-    <!-- Bootstrap 5 via CDN : feuille de style -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Le contenu de la page sera ajoute ici -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid px-4">
         <a class="navbar-brand d-flex align-items-center" href="#">
@@ -24,9 +21,9 @@
             height="40"
             class="d-inline-block align-text-top me-2"
           />
-         <span class="fw-bold text-success">Afri</span><span class="text-white fw-bold">Talent</span>
+          <span class="fw-bold text-success">Afri</span
+          ><span class="text-white fw-bold">Talent</span>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -38,19 +35,20 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-light" href="index.html  "
+              <a class="nav-link active text-light" href="index.html"
                 >Accueil</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="freelances.html">Freelance</a>
+              <a class="nav-link text-light" href="freelances.html"
+                >Freelance</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="tarifs.html">Tarifs</a>
@@ -69,66 +67,75 @@
               >
             </li>
           </ul>
-          <div class="d-flex  align-items-center gap-2 ms-lg-3">
-       <button id="theme-toggle" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
-    🌙
-</button>
-</div>
+          <div class="d-flex align-items-center gap-2 ms-lg-3">
+            <button
+              id="theme-toggle"
+              class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 35px; height: 35px"
+            >
+              🌙
+            </button>
+          </div>
         </div>
       </div>
     </nav>
+
     <section class="container py-5">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4 pt-5">
           <h2 class="mb-4">Envoyez un message</h2>
-          <form>
+
+          <form id="formulaire-contact">
             <div class="mb-3">
               <label class="form-label">Votre Nom</label>
               <input
                 type="text"
+                id="nom"
                 class="form-control"
                 placeholder="Entrez votre nom"
               />
+              <small id="erreur-nom" class="text-danger"></small>
             </div>
             <div class="mb-3">
               <label class="form-label">Votre Email</label>
               <input
                 type="email"
+                id="email"
                 class="form-control"
                 placeholder="Entrez votre email"
               />
+              <small id="erreur-email" class="text-danger"></small>
             </div>
             <div class="mb-3">
               <label class="form-label">Sujet</label>
               <input
                 type="text"
+                id="sujet"
                 class="form-control"
                 placeholder="De quoi voulez-vous parler ?"
               />
+              <small id="erreur-sujet" class="text-danger"></small>
             </div>
             <div class="mb-3">
               <label class="form-label">Message</label>
               <textarea
+                id="message"
                 class="form-control"
                 rows="4"
                 placeholder="Votre message ici..."
               ></textarea>
+              <small id="erreur-message" class="text-danger"></small>
             </div>
-
-            <button
-              type="submit"
-              class="btn btn-success w-100"
-             
-            >
-              Envoyer
-            </button>
+            <div id="message-succes" class="alert alert-success d-none">
+              Message envoyé avec succès ✅
+            </div>
+            <button type="submit" class="btn btn-success w-100">Envoyer</button>
           </form>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 offset-md-1 pt-5">
           <h2 class="mb-4">Nos Coordonnées</h2>
           <p>Vous pouvez egalement nous contacter directement :</p>
-
           <ul class="list-unstyled mt-4">
             <li class="mb-3">
               <strong>📍 Adresse :</strong><br />
@@ -150,6 +157,7 @@
         </div>
       </div>
     </section>
+
     <div class="container mb-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4">
@@ -162,48 +170,9 @@
         </div>
       </div>
     </div>
-<footer class="container-fluid bg-dark text-white pt-5 pb-3">
-    
-    <div class="row px-4"> <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Afritalent</h5>
-            <p>La plateforme de référence pour connecter les talents locaux aux opportunités internationales.</p>
-        </div>
-
-        <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Liens utiles</h5>
-            <ul class="list-unstyled">
-                <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
-                <li><a href="contact.html" class="text-white text-decoration-none">contact</a></li>
-                <li><a href="about.html" class="text-white text-decoration-none">A propos</a></li>
-            </ul>
-        </div>
-
-        <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Ressources</h5>
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-white text-decoration-none">Support</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
-                <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
-            </ul>
-        </div>
-
-        <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Contact</h5>
-            <p>📍 Dakar, Sénégal</p>
-            <p>📧 contact@afritalent.com</p>
-             <div class="mt-4">
-        
-        </div>
-
-    </div>
-
-    <div class="row border-top border-success mt-4 pt-3">
-        <div class="col-12 text-center">
-            <p>© 2026 <strong>Afritalent</strong>. Tous droits réservés.</p>
-        </div>
-    </div>
-
-</footer>
+    <footer class="text-bg-dark p-3">
+      <marquee>©AfriTalent 2025-2026.Tout droit reserves.</marquee>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Votre script JavaScript -->
     <script src="js/main.js"></script>
