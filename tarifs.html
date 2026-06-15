@@ -1,15 +1,14 @@
+
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AfriTalent — Tarifs</title>
-    <!-- Bootstrap 5 via CDN : feuille de style -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -23,8 +22,7 @@
             height="40"
             class="d-inline-block align-text-top me-2"
           />
-          <span class="fw-bold text-success">Afri</span
-          ><span class="text-white fw-bold">Talent</span>
+          <span class="fw-bold text-success">Afri</span><span class="text-white fw-bold">Talent</span>
         </a>
 
         <button
@@ -39,23 +37,16 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-light" href="index.html"
-                >Accueil</a
-              >
+              <a class="nav-link text-light" href="index.html">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="freelances.html"
-                >Freelance</a
-              >
+              <a class="nav-link text-light" href="freelances.html">Freelance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="tarifs.html">Tarifs</a>
+              <a class="nav-link active text-light" href="tarifs.html">Tarifs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="about.html">À propos</a>
@@ -64,11 +55,7 @@
               <a class="nav-link text-light" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link btn btn-success text-white ms-lg-3 px-4"
-                href="contact.htmldi"
-                >Join AfriTalent</a
-              >
+              <a class="nav-link btn btn-success text-white ms-lg-3 px-4" href="contact.html">Join AfriTalent</a>
             </li>
           </ul>
           <div class="d-flex align-items-center gap-2 ms-lg-3">
@@ -83,7 +70,8 @@
         </div>
       </div>
     </nav>
-    <div class="text-center py-5">
+
+    <div class="text-center py-5 mt-5">
       <div class="container">
         <h1 class="fw-bold pt-5">Prêt à passer au niveau supérieur ?</h1>
         <p>
@@ -91,73 +79,82 @@
           croissance, nous avons le plan idéal pour vous.
         </p>
 
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="d-grid gap-2 col-12 col-sm-8 col-md-6 mx-auto">
           <button class="btn btn-dark" type="button">
-            Essaie gratuit de 14jours sur tout les plans
+            Essai gratuit de 14 jours sur tous les plans
           </button>
         </div>
       </div>
     </div>
 
-    <div class="row g-4 align-items-center py-5">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 border shadow-sm p-4">
-          <div class="card-body text-center">
-            <h5 class="fw-bold">Gratuit</h5>
-            <h3 class="my-3">0 FCFA/mois</h3>
-            <ul class="list-unstyled text-start mb-4">
-              <li>✅ 1 projet actif</li>
-              <li>✅ jusqu'à 5 utilisateurs</li>
-              <li>✅ Support par mail</li>
-              <li>✅ reception de 3 messages client</li>
-            </ul>
-            <button class="btn btn-outline-success w-100">Commencer</button>
+    <div class="container py-5">
+      <div class="row g-4 align-items-stretch justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border shadow-sm p-4">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+              <div>
+                <h2 class="fw-bold fs-5">Gratuit</h2>
+                <h3 class="my-3 fs-3">0 FCFA/mois</h3>
+                <ul class="list-unstyled text-start mb-4">
+                  <li>✅ 1 projet actif</li>
+                  <li>✅ jusqu'à 5 utilisateurs</li>
+                  <li>✅ Support par mail</li>
+                  <li>✅ réception de 3 messages client</li>
+                </ul>
+              </div>
+              <button class="btn btn-outline-success w-100 mt-auto">Commencer</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 border border-dark border-2 shadow p-5">
-          <div class="card-body text-center">
-            <div class="badge bg-success mb-2">Recommandé</div>
-            <h5 class="fw-bold text-success">PRO</h5>
-            <h3 class="my-3">20.823 FCFA/mois</h3>
-            <ul class="list-unstyled text-start mb-4">
-              <li>✅ Projets illimités</li>
-              <li>✅ jusqu'à 25 utilisateurs</li>
-              <li>✅ 100Go de stockage</li>
-              <li>✅ Analyse avancée</li>
-              <li>✅ Export</li>
-              <li>✅ Acces complet API</li>
-            </ul>
-            <button class="btn btn-success w-100">
-              Devenir Pro maintenant
-            </button>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border border-dark border-2 shadow p-5">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+              <div>
+                <div class="badge bg-success mb-2">Recommandé</div>
+                <h2 class="fw-bold text-success fs-5">PRO</h2>
+                <h3 class="my-3 fs-3">20.823 FCFA/mois</h3>
+                <ul class="list-unstyled text-start mb-4">
+                  <li>✅ Projets illimités</li>
+                  <li>✅ jusqu'à 25 utilisateurs</li>
+                  <li>✅ 100Go de stockage</li>
+                  <li>✅ Analyse avancée</li>
+                  <li>✅ Export</li>
+                  <li>✅ Accès complet API</li>
+                </ul>
+              </div>
+              <button class="btn btn-success w-100 mt-auto">
+                Devenir Pro maintenant
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 border shadow-sm p-4">
-          <div class="card-body text-center">
-            <h5 class="fw-bold">Entreprise</h5>
-            <h3 class="my-3">99.534 FCFA/mois</h3>
-            <ul class="list-unstyled text-start mb-4">
-              <li>✅ Tout ce qui est pro</li>
-              <li>✅ utilisateurs illimités</li>
-              <li>✅ Sécurité avancée</li>
-              <li>✅ SSO</li>
-              <li>✅ SLA garanti a 99,99%</li>
-            </ul>
-            <button class="btn btn-dark w-100">Contacter l'équipe</button>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border shadow-sm p-4">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+              <div>
+                <h2 class="fw-bold fs-5">Entreprise</h2>
+                <h3 class="my-3 fs-3">99.534 FCFA/mois</h3>
+                <ul class="list-unstyled text-start mb-4">
+                  <li>✅ Tout ce qui est pro</li>
+                  <li>✅ utilisateurs illimités</li>
+                  <li>✅ Sécurité avancée</li>
+                  <li>✅ SSO</li>
+                  <li>✅ SLA garanti à 99,99%</li>
+                </ul>
+              </div>
+              <button class="btn btn-dark w-100 mt-auto">Contacter l'équipe</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <section class="container my-5 py-4">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-4">
-          <h2 class="text-center mb-4 font-weight-bold">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h2 class="text-center mb-4 fw-bold">
             Questions Fréquentes
           </h2>
           <p class="text-center text-muted mb-5">
@@ -181,7 +178,6 @@
               <div
                 id="collapseOne"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingOne"
                 data-bs-parent="#faqTarifs"
               >
                 <div class="accordion-body text-muted">
@@ -208,7 +204,6 @@
               <div
                 id="collapseTwo"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
                 data-bs-parent="#faqTarifs"
               >
                 <div class="accordion-body text-muted">
@@ -235,7 +230,6 @@
               <div
                 id="collapseThree"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
                 data-bs-parent="#faqTarifs"
               >
                 <div class="accordion-body text-muted">
@@ -262,7 +256,6 @@
               <div
                 id="collapseFour"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingFour"
                 data-bs-parent="#faqTarifs"
               >
                 <div class="accordion-body text-muted">
@@ -289,7 +282,6 @@
               <div
                 id="collapseFive"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingFive"
                 data-bs-parent="#faqTarifs"
               >
                 <div class="accordion-body text-muted">
@@ -303,11 +295,14 @@
         </div>
       </div>
     </section>
-    <footer class="text-bg-dark p-3">
-      <marquee>©AfriTalent 2025-2026.Tout droit reserves.</marquee>
+
+    <footer class="bg-dark text-white py-3 text-center">
+      <div class="container">
+        <p class="mb-0">©️ AfriTalent 2025-2026. Tous droits réservés.</p>
+      </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Votre script JavaScript -->
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -4,278 +4,375 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AfriTalent — Freelances</title>
-    <!-- Bootstrap 5 via CDN : feuille de style -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
-  <div class="container-fluid px-4">
-    
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="images/F.jpg.jpeg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
-      <span class="fw-bold text-success">Afri</span><span class="text-white fw-bold">Talent</span>
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active  text-light" href="index.html  ">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="freelances.html">Freelance</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="tarifs.html">Tarifs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="about.html">À propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-success text-white ms-lg-3 px-4" href="contact.html">Join AfriTalent</a>
-        </li>
-      </ul>
-      <div class="d-flex  align-items-center gap-2 ms-lg-3">
-       <button id="theme-toggle" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
-    🌙
-</button>
-</div>
-    </div>
-
-  </div>
-</nav>
-    
-    <ul class="nav justify-content-center mt-5 mb-3 pt-5 text-success ">
-      <li class="nav-item ">
-    <a class="nav-link active text-success" aria-current="page" href="#" data-filtre="tout">Tous</a>
-  </li>
-  <li class="nav-item ">
-    <a class="nav-link active text-success" aria-current="page" href="#" data-filtre="developpeur">Developpeur</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-success" href="#" data-filtre="designer">Designer</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-success" href="#" data-filtre="marketing">Marketing</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-success" href="#" data-filtre="redacteur">Redacteur</a>
-  </li>
-</ul>
-</nav>
-<nav class="navbar1  ">
-  <div class="container-fluid">
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Rechercher</button>
-    </form>
-  </div>
-</nav>
-<div class="container py-5">
-  <div class="row g-4">
-    
-    <div class="col-12 col-md-6 col-lg-4 " data-categorie ="designer">
-      <div class="card h-100 shadow-sm">
-        <img src="images/AA.jpg" class="card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Violetta Gomez</h5>
-          <h6 class="card-subtitle mb-2 ">Design UX/UI</h6>
-          <p class="card-text">Creation d'interface modernes et intuitives centres sur l'experience utilisateur.</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 50€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.9</span>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="images/F.jpg.jpeg"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top me-2"
+          />
+          <span class="fw-bold text-success">Afri</span
+          ><span class="text-white fw-bold">Talent</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-light" href="index.html"
+                >Accueil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="freelances.html"
+                >Freelance</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="tarifs.html">Tarifs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="about.html">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white ms-lg-3 px-4"
+                href="contact.html"
+                >Join AfriTalent</a
+              >
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-2 ms-lg-3">
+            <button
+              id="theme-toggle"
+              class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 35px; height: 35px"
+            >
+              🌙
+            </button>
           </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+        </div>
+      </div>
+    </nav>
+   
+
+    <ul class="nav justify-content-center mt-5 mb-3 pt-5 text-success">
+      <li class="nav-item">
+        <a class="nav-link active text-success" href="#" data-filtre="tout"
+          >Tous</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success" href="#" data-filtre="developpeur"
+          >Developpeur</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success" href="#" data-filtre="designer"
+          >Designer</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success" href="#" data-filtre="marketing"
+          >Marketing</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success" href="#" data-filtre="redacteur"
+          >Redacteur</a
+        >
+      </li>
+    </ul>
+
+    <nav class="navbar1">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Rechercher"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Rechercher
+          </button>
+        </form>
+      </div>
+    </nav>
+    <h1 class="visually-hidden">Nos Freelances</h1>
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="designer">
+          <div class="card h-100 shadow-sm">
+            <img src="images/AA.jpg" class="card-img-top" alt="Photo" >
+            <div class="card-body">
+              <h2 class="card-title">Violetta Gomez</h2>
+              <h3 class="card-subtitle mb-2">Design UX/UI</h3>
+              <p class="card-text">
+                Creation d'interface modernes et intuitives centres performant avec une optimisation tres rapide 
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 50€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.9</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="designer">
+          <div class="card h-100 shadow-sm">
+            <img src="images/BB.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h2 class="card-title">Moussa N DIENG</h2>
+              <h3 class="card-subtitle mb-2">Illustrateur Digital</h3>
+              <!-- CORRECTION 3 : balise <p> fermée -->
+              <p class="card-text">
+                Donne vie a vos idees avec des illustrations uniques et incroyable afin de couvrir vos idees
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 45€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.7</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="developpeur">
+          <div class="card h-100 shadow-sm">
+            <img src="images/nnnnn.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h2 class="card-title">Delphine Bie</h2>
+              <h3 class="card-subtitle mb-2">
+                Analyste de donnees et Experte excel
+              </h3>
+              <p class="card-text">
+                Transformations de donnes brut en tableau 
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 60€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 5.0</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="marketing">
+          <div class="card h-100 shadow-sm">
+            <img src="images/E1.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h3 class="card-title">Nelson Mandela</h3>
+              <h4 class="card-subtitle mb-2">Monteur video</h4>
+              <p class="card-text">
+                Montage professionnel de videos pour youtube, reseaux sociaux ou
+                publicites.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 55€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.8</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="developpeur">
+          <div class="card h-100 shadow-sm">
+            <img src="images/mmmm.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h3 class="card-title">Massamba Ndiaye</h3>
+              <h4 class="card-subtitle mb-2">Developpeur Web fullstack</h4>
+              <p class="card-text">
+                Conception de sites web reactifs et performants. 
+                
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 40€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.5</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="developpeur">
+          <div class="card h-100 shadow-sm">
+            <img src="images/AD.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h3 class="card-title">Sophie Fraisita</h3>
+              <h4 class="card-subtitle mb-2">Expert WordPress</h4>
+              <p class="card-text">
+                Creation et personnalisation de sites vitrines ou e-commerce
+                avec une optimisation SEO.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 70€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.9</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="marketing">
+          <div class="card h-100 shadow-sm">
+            <img src="images/ju.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h3 class="card-title">Zizou Banano</h3>
+              <h4 class="card-subtitle mb-2">Community manager</h4>
+              <p class="card-text">
+                Gestion et animations de vos communautes sur les reseaux sociaux
+                instagram, youtube, twitter, snap.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 35€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.2</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="redacteur">
+          <div class="card h-100 shadow-sm">
+            <img src="images/k1.jpg" class="card-img-top" alt="Photo" />
+            <div class="card-body">
+              <h3 class="card-title">Seedanie Pomita</h3>
+              <h4 class="card-subtitle mb-2">Traductrice Bilingue</h4>
+              <p class="card-text">
+                Traduction fidele et adaptee au contexte pour vos documents
+                techniques, marketing ou litteraires.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 50€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 4.6</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4" data-categorie="redacteur">
+          <div class="card h-100 shadow-sm">
+            <img src="images/may.jpg" class="card-img-top" alt="Photo" >
+            <div class="card-body">
+              <h3 class="card-title">Maya l'abeille</h3>
+              <h4 class="card-subtitle mb-2">Redacteur web SEO</h4>
+              <p class="card-text">
+                Redaction de contenus optimises pour les moteurs de recherche
+                afin d'ameliorer la visibilite de vos reseaux
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-light text-dark border"
+                  >Tarif: 80€/h</span
+                >
+                <span class="badge bg-warning text-dark">⭐ 5.0</span>
+              </div>
+              <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-6 col-lg-4"data-categorie ="designer">
-      <div class="card h-100 shadow-sm">
-        <img src="images/BB.jpg" height="427" class="card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Moussa N DIENG</h5>
-          <h6 class="card-subtitle mb-2 ">Illustrateur Digital</h6>
-          <p class="card-text">Donne vie a vos idees avec des illustrations uniques pour vos support de communication 
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 45€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.7</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="developpeur">
-      <div class="card h-100 shadow-sm">
-        <img src="images/nnnnn.jpg" height="430px" "" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Delphine Bie</h5>
-          <h6 class="card-subtitle mb-2">Analyste de donnees et Experte excel</h6>
-          <p class="card-text">Transformations de donnes brut en tableau de bord clairss pour mieux clarifier</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 60€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 5.0</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="marketing">
-      <div class="card h-100 shadow-sm">
-        <img src="images/E1.jpg" class="card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Nelson Mandela</h5>
-          <h6 class="card-subtitle mb-2 ">Monteur video</h6>
-          <p class="card-text">Montage professionnel de videos pour youtube,reseaux sociaux ou publicites beaucoup de dynamisme.</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 55€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.8</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="developpeur">
-      <div class="card h-100 shadow-sm">
-        <img src="images/mmmm.jpg" height="""card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Massamba Ndiaye</h5>
-          <h6 class="card-subtitle mb-2 ">Developpeut Web fullstack</h6>
-          <p class="card-text">Conception de sites web reactifs et performantes.Miatrise de HTML,CSS,JS et de base de donnees</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 40€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.5</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="developpeur">
-      <div class="card h-100 shadow-sm">
-        <img src="images/AD.jpg"" ""card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Sophie Fraisita</h5>
-          <h6 class="card-subtitle mb-2 ">xpert WordPress</h6>
-          <p class="card-text">Creation et personbalisation de sites vitrines ou e-commerce avec une optimisation SEO aux petits oignons</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 70€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.9</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="marketing">
-      <div class="card h-100 shadow-sm">
-        <img src="images/ju.jpg" " class="card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Zizou Banano</h5>
-          <h6 class="card-subtitle mb-2 ">Community manager</h6>
-          <p class="card-text">Gestion et animations de vos communautes sur les reseaux sociaux instagram,youtube,twiter,snap</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 35€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.2</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="redacteur">
-      <div class="card h-100 shadow-sm">
-        <img src="images/k1.jpg" "card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Seedanie Pomita</h5>
-          <h6 class="card-subtitle mb-2">Traductrice Billingue</h6>
-          <p class="card-text">Traduction fidele et adaptee au conexte pour vos documents techniques,marketing ou litteraire</p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 50€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 4.6</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4" data-categorie ="redacteur">
-      <div class="card h-100 shadow-sm">
-        <img src="images/may.jpg" class="card-img-top" alt="Photo">
-        <div class="card-body">
-          <h5 class="card-title">Maya l'abeille</h5>
-          <h6 class="card-subtitle mb-2 ">Redactateur web SEO</h6>
-          <p class="card-text">Redaction de contenus optimisees pour les moeteurs de recherche afin d'ameliorer la visibilite </p>
-          <div class="mb-3">
-            <span class="badge bg-light text-dark border">Tarif: 80€/h</span>
-            <span class="badge bg-warning text-dark">⭐ 5.0</span>
-          </div>
-          <a href="#" class="btn btn-primary w-100">Voir le profil</a>
-        </div>
-      </div>
-    </div>
-
-  </div> </div>
-  <footer class="container-fluid bg-dark text-white pt-5 pb-3">
-    
-    <div class="row px-4"> <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Afritalent</h5>
-            <p>La plateforme de référence pour connecter les talents locaux aux opportunités internationales.</p>
-        </div>
-
+    <footer class="container-fluid bg-dark text-white pt-5 pb-3">
+      <div class="row px-4">
         <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Liens utiles</h5>
-            <ul class="list-unstyled">
-                <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
-                <li><a href="contact.html" class="text-white text-decoration-none">contact</a></li>
-                <li><a href="about.html" class="text-white text-decoration-none">A propos</a></li>
-            </ul>
+          <h5 class="text-uppercase text-success fw-bold">Afritalent</h5>
+          <p>
+            La plateforme de référence pour connecter les talents locaux aux
+            opportunités internationales.
+          </p>
         </div>
-
         <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Ressources</h5>
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-white text-decoration-none">Support</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
-                <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
-            </ul>
+          <h5 class="text-uppercase text-success fw-bold">Liens utiles</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="index.html" class="text-white text-decoration-none"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="text-white text-decoration-none"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="about.html" class="text-white text-decoration-none"
+                >A propos</a
+              >
+            </li>
+          </ul>
         </div>
-
         <div class="col-md-3 mb-4">
-            <h5 class="text-uppercase text-success font-weight-bold">Contact</h5>
-            <p>📍 Dakar, Sénégal</p>
-            <p>📧 contact@afritalent.com</p>
-             <div class="mt-4">
-        
+          <h5 class="text-uppercase text-success fw-bold">Ressources</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="text-white text-decoration-none">Support</a>
+            </li>
+            <li>
+              <a href="#" class="text-white text-decoration-none">Blog</a>
+            </li>
+            <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+          </ul>
         </div>
-
-    </div>
-
-    <div class="row border-top border-success mt-4 pt-3">
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase text-success fw-bold">Contact</h5>
+          <p>📍 Dakar, Sénégal</p>
+          <p>📧 contact@afritalent.com</p>
+        </div>
+      </div>
+      <div class="row border-top border-success mt-4 pt-3">
         <div class="col-12 text-center">
-            <p>© 2026 <strong>Afritalent</strong>. Tous droits réservés.</p>
+          <p>©️ 2026 <strong>Afritalent</strong>. Tous droits réservés.</p>
         </div>
-    </div>
-
-</footer>
-
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Votre script JavaScript -->
     <script src="js/main.js"></script>
   </body>
 </html>
