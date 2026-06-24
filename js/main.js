@@ -1,122 +1,142 @@
-// dark mode
-// Dark/Light Mode
-const toggleBtn = document.getElementById("theme-toggle");
 
-// Appliquer le thème sauvegardé au chargement
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  document.body.classList.add(savedTheme);
-  toggleBtn.textContent = savedTheme === "dark-mode" ? "☀️" : "🌙";
+// COMMIT 7 - JS : compteurs animés au scroll et fade-in sections
+
+
+//  1. FADE-IN DES SECTIONS AU SCROLL 
+const sectionsFadeIn = document.querySelectorAll('.fade-in-section');
+
+const observateurFadeIn = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+sectionsFadeIn.forEach(function(section) {
+  observateurFadeIn.observe(section);
+});
+
+
+// --- 2. COMPTEURS ANIMÉS AU SCROLL ---
+const compteurs = document.querySelectorAll('.compteur');
+
+const observateurCompteur = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      const cible = parseInt(entry.target.getAttribute('data-cible'));
+      let valeurActuelle = 0;
+      const duree = 2000; // durée en ms
+      const increment = Math.ceil(cible / (duree / 20));
+
+      const intervalle = setInterval(function() {
+        valeurActuelle += increment;
+        if (valeurActuelle >= cible) {
+          entry.target.textContent = cible;
+          clearInterval(intervalle);
+        } else {
+          entry.target.textContent = valeurActuelle;
+        }
+      }, 20);
+
+      observateurCompteur.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+compteurs.forEach(function(compteur) {
+  observateurCompteur.observe(compteur);
+});
+
+
+// --- 3. NAVBAR : changement de style au scroll ---
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50) {
+    navbar.classList.add('navbar-scrolled');
+  } else {
+    navbar.classList.remove('navbar-scrolled');
+  }
+});
+
+
+// --- 4. BOUTON RETOUR EN HAUT ---
+const boutonHaut = document.getElementById('backToTop');
+
+if (boutonHaut) {
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      boutonHaut.style.display = 'block';
+    } else {
+      boutonHaut.style.display = 'none';
+    }
+  });
+
+  boutonHaut.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
-// Au clic sur le bouton
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
 
-  const isDark = document.body.classList.contains("dark-mode");
-  localStorage.setItem("theme", isDark ? "dark-mode" : "");
-  toggleBtn.textContent = isDark ? "☀️" : "🌙";
-});
+// --- 5. DARK / LIGHT MODE ---
+const boutonTheme = document.getElementById('theme-toggle');
 
-// navbar au scroll
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
+if (boutonTheme) {
+  const themeSauvegarde = localStorage.getItem('theme');
+  if (themeSauvegarde === 'dark') {
+    document.body.classList.add('dark-mode');
+    boutonTheme.textContent = '☀️';
   }
-});
 
-// retour en hqaut
-const btnTop = document.getElementById("btn-top");
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 300) {
-    btnTop.style.display = "block";
-  } else {
-    btnTop.style.display = "none";
-  }
-});
-
-// commit   7 le cpt et le fade in
-document.addEventListener("DOMContentLoaded", function () {
-  // -- COMPTEURS --
-  var compteurs = document.querySelectorAll(".compteur");
-
-  compteurs.forEach(function (compteur) {
-    var dejaLance = false;
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        if (entries[0].isIntersecting && !dejaLance) {
-          dejaLance = true;
-          var cible = parseInt(compteur.getAttribute("data-cible"));
-          var actuel = 0;
-          var increment = Math.ceil(cible / 100);
-
-          var timer = setInterval(function () {
-            actuel += increment;
-            if (actuel >= cible) {
-              actuel = cible;
-              clearInterval(timer);
-            }
-            compteur.textContent = actuel;
-          }, 20);
-        }
-      },
-      { threshold: 0.5 },
-    );
-
-    observer.observe(compteur);
+  boutonTheme.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      boutonTheme.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      boutonTheme.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
   });
+}
 
-  // fade in
-  var sections = document.querySelectorAll(".fade-in-section");
 
-  var fadeObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
 
-  sections.forEach(function (s) {
-    fadeObserver.observe(s);
-  });
-});
+const liensFiltre = document.querySelectorAll('[data-filtre]');
+const cardsFreelance = document.querySelectorAll('[data-categorie]');
 
-// commit8 filtrage
-var filtres = document.querySelectorAll("[data-filtre]");
-
-filtres.forEach(function (filtre) {
-  filtre.addEventListener("click", function (e) {
+liensFiltre.forEach(function(lien) {
+  lien.addEventListener('click', function(e) {
     e.preventDefault();
-    var categorie = this.getAttribute("data-filtre");
-    var cartes = document.querySelectorAll("[data-categorie]");
 
-    cartes.forEach(function (carte) {
-      if (
-        categorie === "tout" ||
-        carte.getAttribute("data-categorie") === categorie
-      ) {
-        carte.style.display = "block";
+    // Retirer la classe active de tous les liens
+    liensFiltre.forEach(function(l) {
+      l.classList.remove('active');
+    });
+
+    // Ajouter active sur le lien cliqué
+    lien.classList.add('active');
+
+    const filtre = lien.getAttribute('data-filtre');
+
+    // Afficher ou masquer les cards selon la catégorie
+    cardsFreelance.forEach(function(card) {
+      const categorie = card.getAttribute('data-categorie');
+
+      if (filtre === 'tout' || categorie === filtre) {
+        card.style.display = 'block';
       } else {
-        carte.style.display = "none";
+        card.style.display = 'none';
       }
     });
   });
 });
 
-// formulaire
-
 var formulaire = document.getElementById("formulaire-contact");
 
 if (formulaire) {
-  formulaire.addEventListener("submit", function (e) {
+  formulaire.addEventListener("submit", function(e) {
     e.preventDefault();
 
     var nom = document.getElementById("nom").value.trim();
@@ -126,8 +146,7 @@ if (formulaire) {
     var valide = true;
 
     if (nom === "") {
-      document.getElementById("erreur-nom").textContent =
-        "Le nom est obligatoire";
+      document.getElementById("erreur-nom").textContent = "Le nom est obligatoire";
       valide = false;
     } else {
       document.getElementById("erreur-nom").textContent = "";
@@ -142,16 +161,14 @@ if (formulaire) {
     }
 
     if (sujet === "") {
-      document.getElementById("erreur-sujet").textContent =
-        "Le sujet est obligatoire";
+      document.getElementById("erreur-sujet").textContent = "Le sujet est obligatoire";
       valide = false;
     } else {
       document.getElementById("erreur-sujet").textContent = "";
     }
 
     if (message.length < 20) {
-      document.getElementById("erreur-message").textContent =
-        "Le message doit avoir au moins 20 caractères";
+      document.getElementById("erreur-message").textContent = "Le message doit avoir au moins 20 caractères";
       valide = false;
     } else {
       document.getElementById("erreur-message").textContent = "";

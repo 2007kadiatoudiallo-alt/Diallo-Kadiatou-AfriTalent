@@ -453,3 +453,18 @@ body.dark-mode h3 {
 
   background-color: #375a47; /* Change légèrement la couleur  */
 }
+/* État initial */
+.navbar {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+  background-color: rgb(3, 37, 3) !important;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* État après scroll */
+.navbar.navbar-scrolled {
+  background-color: #114c17 !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
